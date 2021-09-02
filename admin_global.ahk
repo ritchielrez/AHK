@@ -1,5 +1,5 @@
 #NoEnv
-#SingleInstance
+#SingleInstance, force
 
 #q::
 WinGetTitle, Title, A
