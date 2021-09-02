@@ -8,7 +8,9 @@
 
 #Enter:: run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 
+#c:: run, "code"
+
 #+r:: Reload
-#+e:: Edit
+#+e:: run, "./edit.bat"
 
 !q:: !f4
