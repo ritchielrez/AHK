@@ -10,6 +10,8 @@
 
 #c:: run, "code"
 
+#b:: run, "C:\Program Files\Bitwarden\Bitwarden.exe"
+
 #+r:: Reload
 #+e:: run, "./edit.bat"
 
