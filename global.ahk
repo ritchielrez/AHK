@@ -8,14 +8,18 @@
 
 #Enter:: 
 Sleep, 500
-IfWinNotExist, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
-    run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 WinActivate, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
 Return
 
 #c:: run, "code"
 
-#b:: run, "C:\Program Files\Bitwarden\Bitwarden.exe"
+#b:: 
+Sleep, 500
+IfWinNotExist, ahk_exe Bitwarden.exe
+    run, "C:\Program Files\Bitwarden\Bitwarden.exe"
+WinActivate, ahk_exe Bitwarden.exe
+Return
 
 #+r:: Reload
 #+e:: run, "./edit.bat"
