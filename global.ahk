@@ -3,7 +3,16 @@
 
 #w:: run, msedge.exe
 
-!d:: run, "C:\Users\LiteOS\AppData\Local\Discord\app-1.0.9002\Discord.exe"
+!d:: 
+; Waits program to launch
+Sleep, 250
+
+; Checks if Discord already running, if it's, activates it. Otherwise launches the app
+IfWinNotExist, ahk_exe Discord.exe
+    run, "C:\Users\LiteOS\AppData\Local\Discord\app-1.0.9002\Discord.exe"
+WinActivate, ahk_exe Discord.exe
+Return
+
 !s:: run, "C:\Users\LiteOS\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
 
 #Enter:: 
