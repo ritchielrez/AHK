@@ -1,1 +1,1 @@
-code C:\Users\LiteOS\Documents\AHK
+subl C:\Users\LiteOS\Documents\AHK
