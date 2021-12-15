@@ -5,22 +5,22 @@
 
 !d:: 
 ; Waits program to launch
-Sleep, 250
+;Sleep, 100
 
 ; Checks if Discord already running, if it's, activates it. Otherwise launches the app
 IfWinNotExist, ahk_exe Discord.exe
-    run, "C:\Users\LiteOS\AppData\Local\Discord\app-1.0.9002\Discord.exe"
+    run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 WinActivate, ahk_exe Discord.exe
 Return
 
-!s:: run, "C:\Users\LiteOS\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
+!s:: run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
 
 #Enter:: 
 ; Waits for the program to launch
 Sleep, 250
 
 ; Launches Windows Terminal
-run, "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.9.1942.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+run, "wt"
 
 ; Activates it
 WinActivate, ahk_class CASCADIA_HOSTING_WINDOW_CLASS

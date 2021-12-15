@@ -1,1 +1,1 @@
-subl C:\Users\LiteOS\Documents\AHK
+subl C:\Users\ritch\Documents\Github\AHK\global.ahk
