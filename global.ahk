@@ -39,6 +39,6 @@ WinActivate, ahk_exe Bitwarden.exe
 Return
 
 #+r:: Reload
-#+e:: run, "./edit.bat" ; runs my edit batch script to open vscode to edit this script
+#+e:: run, "./edit.bat" ; runs my edit batch script to open sublime text to edit this script
 
 !q:: !f4 ; When you press Alt+q, it sends to windows the Alt+F4 shortcut
