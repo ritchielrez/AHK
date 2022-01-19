@@ -1,9 +1,9 @@
 #SingleInstance, force
 #NoEnv
 
-#w:: run, msedge.exe
+#w:: run, firefox.exe
 
-!d:: 
+#+d:: 
 ; Waits program to launch
 ;Sleep, 100
 
@@ -11,6 +11,7 @@
 IfWinNotExist, ahk_exe Discord.exe
     run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 WinActivate, ahk_exe Discord.exe
+;run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
 
 !s:: run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
