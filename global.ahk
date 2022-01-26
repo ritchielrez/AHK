@@ -9,7 +9,7 @@
 
 ; Checks if Discord already running, if it's, activates it. Otherwise launches the app
 IfWinNotExist, ahk_exe Discord.exe
-    run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+    run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 WinActivate, ahk_exe Discord.exe
 ;run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
