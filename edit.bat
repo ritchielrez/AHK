@@ -1,1 +1,1 @@
-subl C:\Users\ritch\Documents\Github\AHK\global.ahk
+nvim C:\Users\ritux\Documents\Github\AHK\global.ahk
