@@ -26,14 +26,14 @@ Return
 
 #Enter:: 
 ; Waits for the program to launch
-; Sleep, 250
+Sleep, 250
 
 IfWinNotExist, ahk_exe alacritty.exe
     run, "alacritty.exe"
 if WinActive("ahk_exe alacritty.exe")
-    Send ^{tab}
-else
-    WinActivate, ahk_exe alacritty.exe
+    Send ^n
+
+WinActivate, ahk_exe alacritty.exe
 Return
 
 #c:: run, "code" ; Launches Vscode
