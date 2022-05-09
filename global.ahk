@@ -1,13 +1,21 @@
 #SingleInstance, force
 #NoEnv
 
-#w:: run, firefox.exe
+#w:: 
+; Checks if Edge already running, if it's, focuses on the window. If it's already focused,
+; press Ctrl+Tab in the Microsoft Edge, otherwise just launch the app
+IfWinNotExist, ahk_exe msedge.exe
+    run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+if WinActive("ahk_exe msedge.exe")
+    Send ^{tab}
+else 
+    WinActivate, ahk_exe msedge.exe
+Return
 
 #+d:: 
 ; Waits program to launch
 ;Sleep, 100
 
-; Checks if Discord already running, if it's, activates it. Otherwise launches the app
 IfWinNotExist, ahk_exe Discord.exe
     run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 WinActivate, ahk_exe Discord.exe
@@ -18,13 +26,14 @@ Return
 
 #Enter:: 
 ; Waits for the program to launch
-Sleep, 250
+; Sleep, 250
 
-; Launches Windows Terminal
-run, "wt"
-
-; Activates it
-WinActivate, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
+IfWinNotExist, ahk_exe alacritty.exe
+    run, "alacritty.exe"
+if WinActive("ahk_exe alacritty.exe")
+    Send ^{tab}
+else
+    WinActivate, ahk_exe alacritty.exe
 Return
 
 #c:: run, "code" ; Launches Vscode
