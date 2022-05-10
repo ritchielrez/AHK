@@ -2,10 +2,10 @@
 #NoEnv
 
 #w:: 
-; Checks if Edge already running, if it's, focuses on the window. If it's already focused,
+; Checks if Edge already Running, if it's, focuses on the window. If it's already focused,
 ; press Ctrl+Tab in the Microsoft Edge, otherwise just launch the app
 IfWinNotExist, ahk_exe msedge.exe
-    run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+    Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 if WinActive("ahk_exe msedge.exe")
     Send ^{tab}
 else 
@@ -17,38 +17,51 @@ Return
 ;Sleep, 100
 
 IfWinNotExist, ahk_exe Discord.exe
-    run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+    Run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 WinActivate, ahk_exe Discord.exe
-;run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+;Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
 
-!s:: run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
+!s:: Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
 
 #Enter:: 
 ; Waits for the program to launch
 Sleep, 250
-
 IfWinNotExist, ahk_exe alacritty.exe
-    run, "alacritty.exe"
-if WinActive("ahk_exe alacritty.exe")
-    Send ^n
+    Run, alacritty.exe
+GroupAdd, alacritties, ahk_class Window Class
 
-WinActivate, ahk_exe alacritty.exe
+if WinActive("ahk_exe alacritty.exe")
+    GroupActivate, alacritties, r
+else 
+    WinActivate ahk_exe alacritty.exe
+
 Return
 
-#c:: run, "code" ; Launches Vscode
+#e:: 
+IfWinNotExist, ahk_class CabinetWClass
+    Run, explorer.exe
+GroupAdd, explorers, ahk_class CabinetWClass
+
+if WinActive("ahk_exe explorer.exe")
+    GroupActivate, explorers, r
+else 
+    WinActivate ahk_class CabinetWClass
+Return
+
+#c:: Run, "code" ; Launches Vscode
 
 #b:: 
 ; Waits for the program to launch
 Sleep, 250
 
-; Checks if Bitwarden already running, if it's, activates it. Otherwise launches the app
+; Checks if Bitwarden already Running, if it's, activates it. Otherwise launches the app
 IfWinNotExist, ahk_exe Bitwarden.exe
-    run, "C:\Program Files\Bitwarden\Bitwarden.exe"
+    Run, "C:\Program Files\Bitwarden\Bitwarden.exe"
 WinActivate, ahk_exe Bitwarden.exe
 Return
 
 #+r:: Reload
-#+e:: run, "./edit.bat" ; runs my edit batch script to open sublime text to edit this script
+#+e:: Run, "./edit.bat" ; Runs my edit batch script to open sublime text to edit this script
 
 !q:: !f4 ; When you press Alt+q, it sends to windows the Alt+F4 shortcut
