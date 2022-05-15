@@ -27,14 +27,14 @@ Return
 #Enter:: 
 ; Waits for the program to launch
 Sleep, 250
-IfWinNotExist, ahk_exe alacritty.exe
-    Run, alacritty.exe
-GroupAdd, alacritties, ahk_class Window Class
+IfWinNotExist, ahk_exe WindowsTerminal.exe
+    Run, wt
+GroupAdd, alacritties, ahk_class CASCADIA_HOSTING_WINDOW_CLASS
 
-if WinActive("ahk_exe alacritty.exe")
+if WinActive("ahk_exe WindowsTerminal.exe")
     GroupActivate, alacritties, r
 else 
-    WinActivate ahk_exe alacritty.exe
+    WinActivate ahk_exe WindowsTerminal.exe
 
 Return
 
