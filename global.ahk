@@ -18,7 +18,13 @@ Return
 
 IfWinNotExist, ahk_exe Discord.exe
     Run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
-WinActivate, ahk_exe Discord.exe
+
+Send, #b
+Send, {Right}
+Send, {Right}
+Send, {Right}
+Send, {Enter}
+
 ;Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
 
@@ -53,7 +59,7 @@ Return
 
 #c:: Run, "code" ; Launches Vscode
 
-#b:: 
+#+b:: 
 ; Waits for the program to launch
 Sleep, 250
 
