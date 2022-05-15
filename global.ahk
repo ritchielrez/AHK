@@ -22,6 +22,8 @@ WinActivate, ahk_exe Discord.exe
 ;Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
 
+!d:: Run, "G:\googlesearchlnk"
+
 !s:: Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Spotify.lnk" 
 
 #Enter:: 
