@@ -1,5 +1,6 @@
 #SingleInstance, force
 #NoEnv
+#Include trayicon.ahk
 
 #w:: 
 ; Checks if Edge already Running, if it's, focuses on the window. If it's already focused,
@@ -18,12 +19,7 @@ Return
 
 IfWinNotExist, ahk_exe Discord.exe
     Run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
-
-Send, #b
-Send, {Right}
-Send, {Right}
-Send, {Right}
-Send, {Enter}
+TrayIcon_Button("Discord.exe")
 
 ;Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
 Return
