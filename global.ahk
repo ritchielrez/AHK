@@ -1,6 +1,6 @@
 #SingleInstance, force
 #NoEnv
-#Include trayicon.ahk
+#Include trayicon.ahk ; Includes a script, which allow to click on specific tray icons
 
 #w:: 
 ; Checks if Edge already Running, if it's, focuses on the window. If it's already focused,
@@ -14,14 +14,25 @@ else
 Return
 
 #+d:: 
-; Waits program to launch
-;Sleep, 100
+; Waits for the program to launch
+; Sleep, 100
 
-IfWinNotExist, ahk_exe Discord.exe
+Process, Exist, Discord.exe
+
+if ErrorLevel = 0
+{
     Run, "C:\Users\ritux\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
-TrayIcon_Button("Discord.exe")
+}
+else
+{
+    TrayIcon_Button("Discord.exe")
+}
 
-;Run, "C:\Users\ritch\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+if not WinActive("ahk_exe Chrome_WidgetWin_1 ahk_exe Discord.exe") 
+{
+    WinActivate, ahk_exe Discord.exe
+}
+
 Return
 
 !d:: Run, "G:\googlesearchlnk"
